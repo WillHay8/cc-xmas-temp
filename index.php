@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
 
-
+<div id="results_page"></div>
 <div id="load_con"></div>
 
 <div class="container home_content">
@@ -27,46 +27,7 @@
 
 
 
-<script>
-
-
-	// PRELOAD	
-	$(function() { 	
-	 	$( document ).ready(function() {
-			$('.loader').delay(500).fadeOut('slow',function(){}); 	
-	 	})
-	});
-	
-	// CLEAR THE LOAD IN CONTAINER
-	$('.click').click(function() {
-		$('.loader').fadeIn('slow',function(){});
-		$('#load_con').html('');
-		$('.loader').delay(500).fadeOut('slow',function(){});
-	});
-	
-	// POPULATE LOAD IN CONTAINER
-	$('#start').click(function() {
-		$('.loader').fadeIn('slow',function(){});
-		$('.loader').delay(500).fadeOut('slow',function(){});
-		$('#load_con').load('vr.php', function() {
-			
-			var count = 45; 
-			    (function(){
-				    count--;
-				    if (count >= 0){
-						 $('#time_count').html(count);
-						 setTimeout(arguments.callee, 1000); 
-				    } else {
-					     //alert('blah');
-				    }
-					  	 	
-				})();
-
-			
-		});
-	});	
-	
-</script>
+<script src="js/main.js"></script>
 
 
 <?php include('footer.php'); ?>
